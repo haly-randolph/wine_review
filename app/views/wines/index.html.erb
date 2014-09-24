@@ -4,4 +4,6 @@
 <% @wines.each do |wine| %>
    <li><%= link_to(wine.name, wine )%> sale by <%= wine.winery %> made of <%= wine.varietal %> </li>
 <% end %>   
-</ol>	
+</ol>
+
+<%= link_to 'New Wine', new_wine_path %>	
