@@ -3,5 +3,8 @@ class Wine < ActiveRecord::Base
 	validates :name, :year, :country, presence: true
 	validates :year,
 	    numericality: {only_integer: true}
-	validates :varietal, inclusion: { in: VARIETALS, message: "must be from varietal list"}    
+	validates :varietal, inclusion: { in: VARIETALS, message: "must be from varietal list"}  
+
+	has_many :log_entries, dependent: :destroy 
+
 end
